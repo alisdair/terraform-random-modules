@@ -3,6 +3,10 @@ variable "ids" {
 }
 
 resource "random_id" "id" {
+  keepers = {
+    uuid = uuid()
+  }
+
   count = var.ids
 
   byte_length = 8

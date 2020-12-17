@@ -1,4 +1,8 @@
 resource "random_integer" "int" {
+  keepers = {
+    uuid = uuid()
+  }
+
   min = 0
   max = 30
 
