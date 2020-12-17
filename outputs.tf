@@ -3,7 +3,7 @@ output "ids" {
 }
 
 output "numbers" {
-  value = module.numbers.*.result
+  value = module.numbers.result
 }
 
 output "pets" {

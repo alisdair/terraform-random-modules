@@ -18,5 +18,5 @@ resource "random_integer" "int" {
 }
 
 output "result" {
-  value = random_integer.int.result
+  value = random_integer.int.*.result
 }
