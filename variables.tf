@@ -1,5 +1,5 @@
 variable "ids" {
-  default = 15
+  default = 8
 }
 
 variable "numbers" {
