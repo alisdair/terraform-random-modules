@@ -3,6 +3,10 @@ variable "prefixes" {
 }
 
 resource "random_pet" "pet" {
+  keepers = {
+    uuid = uuid()
+  }
+
   for_each = var.prefixes
   prefix = each.value
 
