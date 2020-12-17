@@ -5,7 +5,7 @@ module "ids" {
 
 module "numbers" {
   source = "./numbers"
-  count = var.numbers
+  numbers = var.numbers
 }
 
 module "pets" {

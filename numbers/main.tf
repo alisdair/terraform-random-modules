@@ -1,4 +1,10 @@
+variable "numbers" {
+  type = number
+}
+
 resource "random_integer" "int" {
+  count = var.numbers
+
   keepers = {
     uuid = uuid()
   }
