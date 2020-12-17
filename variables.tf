@@ -1,9 +1,9 @@
 variable "ids" {
-  default = 3
+  default = 5
 }
 
 variable "numbers" {
-  default = 10
+  default = 3
 }
 
 variable "server_types" {
