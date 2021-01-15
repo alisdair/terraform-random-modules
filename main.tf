@@ -14,6 +14,9 @@ module "pets" {
 }
 
 resource "null_resource" "none" {
+  triggers = {
+    uuid = uuid()
+  }
   count = 5
 }
 
