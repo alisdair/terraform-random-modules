@@ -18,5 +18,5 @@ resource "null_resource" "none" {
 }
 
 output "fail" {
-  value = jsondecode(null_resource.none.id)
+  value = jsondecode(null_resource.none[0].id)
 }
