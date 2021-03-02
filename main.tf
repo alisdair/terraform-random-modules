@@ -1,15 +1,15 @@
 module "ids" {
   source = "./ids"
-  ids = var.ids
+  ids    = var.ids
 }
 
 module "numbers" {
-  source = "./numbers"
+  source  = "./numbers"
   numbers = var.numbers
 }
 
 module "pets" {
-  source = "./pets"
+  source   = "./pets"
   prefixes = var.server_types
 }
 
@@ -18,6 +18,10 @@ resource "null_resource" "none" {
     uuid = uuid()
   }
   count = 5
+
+  provisioner "local-exec" {
+    command = "sleep 1 + ${count.index * 2}"
+  }
 }
 
 output "fail" {

@@ -8,13 +8,13 @@ resource "random_pet" "pet" {
   }
 
   for_each = var.prefixes
-  prefix = each.value
+  prefix   = each.value
 
   provisioner "local-exec" {
-    command = "sleep ${5 * length(each.value)}"
+    command = "sleep ${6 + 5 * length(each.value)}"
   }
 }
 
 output "names" {
-  value = [for pet in random_pet.pet: pet.id]
+  value = [for pet in random_pet.pet : pet.id]
 }

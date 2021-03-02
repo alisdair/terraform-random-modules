@@ -7,6 +7,6 @@ variable "numbers" {
 }
 
 variable "server_types" {
-  type = set(string)
+  type    = set(string)
   default = ["db", "backend", "ember"]
 }
