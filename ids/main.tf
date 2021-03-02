@@ -12,7 +12,7 @@ resource "random_id" "id" {
   byte_length = 8
 
   provisioner "local-exec" {
-    command = "sleep 1 + ${5 * count.index}"
+    command = "sleep ${1 + 5 * count.index}"
   }
 }
 

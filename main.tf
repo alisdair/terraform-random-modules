@@ -20,7 +20,7 @@ resource "null_resource" "none" {
   count = 5
 
   provisioner "local-exec" {
-    command = "sleep 1 + ${count.index * 2}"
+    command = "sleep ${1 + count.index * 2}"
   }
 }
 
