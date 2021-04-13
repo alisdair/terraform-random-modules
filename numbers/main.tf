@@ -13,7 +13,7 @@ resource "random_integer" "int" {
   max = 30
 
   provisioner "local-exec" {
-    command = "sleep ${3 + self.result}"
+    command = "echo ${3 + self.result}"
   }
 }
 
