@@ -23,3 +23,7 @@ resource "null_resource" "none" {
     command = "sleep ${1 + count.index * 2}"
   }
 }
+
+output "fail" {
+  value = jsondecode(null_resource.none[0].id)
+}

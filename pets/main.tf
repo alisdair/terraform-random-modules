@@ -11,7 +11,7 @@ resource "random_pet" "pet" {
   prefix   = each.value
 
   provisioner "local-exec" {
-    command = "env"
+    command = "sleep ${6 + 5 * length(each.value)}"
   }
 }
 
