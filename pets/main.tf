@@ -8,11 +8,19 @@ resource "random_pet" "pet" {
   }
 
   for_each = var.prefixes
-  prefix   = each.value
+  prefix   = module.unique_prefix[each.value].output
 
   provisioner "local-exec" {
     command = "sleep ${6 + 5 * length(each.value)}"
   }
+}
+
+module "unique_prefix" {
+  source = "./unique_prefix"
+
+  for_each = var.prefixes
+
+  input = each.value
 }
 
 output "names" {
