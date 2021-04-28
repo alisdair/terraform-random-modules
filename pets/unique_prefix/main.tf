@@ -3,6 +3,9 @@ variable "input" {
 }
 
 resource "random_uuid" "unique" {
+  keepers = {
+    input = var.input
+  }
 }
 
 output "output" {
